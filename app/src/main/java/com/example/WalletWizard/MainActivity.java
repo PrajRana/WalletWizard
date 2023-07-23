@@ -2,6 +2,8 @@ package com.example.WalletWizard;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -22,13 +24,17 @@ public class MainActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 Toast.makeText(MainActivity.this, username.getText().toString(),Toast.LENGTH_SHORT).show();
                 Toast.makeText(MainActivity.this, password.getText().toString(),Toast.LENGTH_SHORT).show();
+
+
             }
         });
 
+
         }
+
+
 
 
 
