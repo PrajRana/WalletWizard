@@ -12,12 +12,13 @@ public class JDBCHelper extends SQLiteOpenHelper{
     static final int Database_Version = 1;
 
     static final String Database_Table = "Users";
-    static final String User_Id = "UserId";
+//    static final String User_Id = "UserId";
     static final String User_name = "UserName";
     static final String User_password = "Password";
 
-    private static final String CREATE_DB_QUERY = "CREATE TABLE " + Database_Table +" ( " + User_Id
-            + " INTEGER PRIMARY KEY AUTOINCREMENT," + User_name + " TEXT NOT NULL," + User_password + " TEXT );";
+    private static final String CREATE_DB_QUERY = "CREATE TABLE " + Database_Table +" ("
+            + " INTEGER PRIMARY KEY AUTOINCREMENT, " + User_name + " TEXT NOT NULL, " + User_password + " TEXT NOT NULL);";
+
 
     public JDBCHelper( Context context) {
         super(context, Database_Name, null, Database_Version);
