@@ -56,14 +56,14 @@
         android:text="LOGIN" />
 
     <Button
-        android:id="@+id/viewbutton"
+        android:id="@+id/DropDatabaseButtonPressed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/password"
         android:layout_marginTop="131dp"
         android:layout_marginBottom="10dp"
-        android:onClick="ViewButtonPressed"
-        android:text=" view" />
+        android:onClick="DropDatabaseButtonPressed"
+        android:text=" drop" />
 
     <TextView
     android:layout_width="wrap_content"
@@ -74,6 +74,10 @@
     android:textColor="@color/black"
     android:layout_centerHorizontal="true"
     android:layout_margin="10dp"/>
+
+
+
+
 
 
 

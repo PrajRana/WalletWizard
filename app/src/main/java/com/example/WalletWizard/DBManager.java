@@ -38,6 +38,9 @@ public class DBManager {
         return sqLiteDatabase.query(JDBCHelper.Database_Table, columns, null, null, null, null, null);
     }
 
+//   public void dropDatabase() {
+//        context.deleteDatabase(JDBCHelper.Database_Name);
+//    }
 }
 
 
