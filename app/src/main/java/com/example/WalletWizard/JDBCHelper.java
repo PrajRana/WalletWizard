@@ -14,24 +14,23 @@ public class JDBCHelper extends SQLiteOpenHelper{
     static final String Database_Table = "SignUP";
 
     static final String Database_Table2 = "Login";
-    static final String First_Name = "FirstName";
-    static final String Last_Name = "LastName";
-    static final String User_Id = "UserId";
+    static final String Full_Name = "FullName";
+
+    static final String Email = "Email";
     static final String User_name = "UserName";
     static final String User_password = "Password";
 
     private static final String CREATE_DB_QUERY = "CREATE TABLE " + Database_Table + " ("
-            + User_Id + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-            + User_name + " TEXT NOT NULL, "
+            + Email + " TEXT NOT NULL, "
+            + User_name + " TEXT PRIMARY KEY AUTOINCREMENT, "
             + User_password + " TEXT NOT NULL, "
-            + First_Name + " TEXT NOT NULL, "
-            + Last_Name + " TEXT NOT NULL);";
+            + Full_Name + " TEXT NOT NULL);";
 
 
     private static final String CREATE_DB_QUERY2 = "CREATE TABLE " + Database_Table2 + " (" +
-            User_Id + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            User_name + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
             User_password + " TEXT NOT NULL, " +
-            "FOREIGN KEY (" + User_Id + ") REFERENCES " + Database_Table + "(" + User_Id + "));";
+            "FOREIGN KEY (" + Email + ") REFERENCES " + Database_Table + "(" + User_name + "));";
 
 
 

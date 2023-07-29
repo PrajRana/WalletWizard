@@ -66,22 +66,49 @@
         android:text=" drop" />
 
     <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:id="@+id/forgotpassword"
-    android:layout_below="@id/signinbutton"
-    android:text="Forgot Password?"
-    android:textColor="@color/black"
-    android:layout_centerHorizontal="true"
-    android:layout_margin="10dp"/>
+        android:id="@+id/forgotpassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/signinbutton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="Forgot Password?"
+        android:clickable="true"
+        android:focusable="true"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/donthaveanccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/forgotpassword"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="10dp"
+        android:text="Don't have an account?"
+        android:textColor="@color/black" />
 
 
-
-
-
-
-
-
+    <TextView
+        android:id="@+id/newsignup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/forgotpassword"
+        android:layout_toEndOf="@id/donthaveanccount"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginStart="3dp"
+        android:text="Sign Up?"
+        android:onClick="NewSignUp"
+        android:clickable="true"
+        android:focusable="true"
+        android:textColor="@color/black" />
 
 
 </RelativeLayout>

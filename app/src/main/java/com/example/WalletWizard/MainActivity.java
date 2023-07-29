@@ -22,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
     DBManager dbManager;
     TextView username;
     TextView password;
+    TextView signup;
+
 
 
     @Override
@@ -31,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
         username = (TextView) findViewById(R.id.username);
         password = (TextView) findViewById(R.id.password);
+        signup = (TextView) findViewById(R.id.newsignup);
 
         Button login = (Button) findViewById(R.id.signinbutton);
 
@@ -47,6 +50,11 @@ public class MainActivity extends AppCompatActivity {
         dbManager.insert(username.getText().toString(),password.getText().toString());
         OpenNewPage();
 
+    }
+
+    public  void NewSignUp(View v){
+        Intent intent = new Intent(this,SignUpPage.class);
+        startActivity(intent);
     }
 
 //    public void DropDatabaseButtonPressed(View v) {
