@@ -3,6 +3,8 @@ package com.example.WalletWizard;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
@@ -22,9 +24,10 @@ public class JDBCHelper extends SQLiteOpenHelper{
 
     private static final String CREATE_DB_QUERY = "CREATE TABLE " + Database_Table + " ("
             + Email + " TEXT NOT NULL UNIQUE, "
-            + User_name + " TEXT PRIMARY KEY , "
+            + User_name + " TEXT NOT NULL UNIQUE, "
             + User_password + " TEXT NOT NULL, "
-            + Full_Name + " TEXT NOT NULL);";
+            + Full_Name + " TEXT NOT NULL, "
+            + "PRIMARY KEY (" + User_name + "));";
 
 
 //    private static final String CREATE_DB_QUERY2 = "CREATE TABLE " + Database_Table2 + " ("
@@ -33,14 +36,16 @@ public class JDBCHelper extends SQLiteOpenHelper{
 
 
 
-    public JDBCHelper( Context context) {
+    public JDBCHelper(Context context) {
         super(context, Database_Name, null, Database_Version);
     }
 
    @Override
     public void onCreate(SQLiteDatabase db) {
+       Log.d("JDBCHelper", "onCreate called");
         db.execSQL(CREATE_DB_QUERY);
-       // db.execSQL(CREATE_DB_QUERY2);
+
+       //db.execSQL(CREATE_DB_QUERY2);
     }
 
     @Override

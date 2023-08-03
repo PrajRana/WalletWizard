@@ -52,7 +52,7 @@
         android:layout_below="@+id/password"
         android:layout_marginTop="1dp"
         android:layout_marginBottom="10dp"
-        android:onClick="InsertButtonPressed"
+        android:onClick="LoginButtonPressed"
         android:text="LOGIN" />
 
     <Button
@@ -64,6 +64,16 @@
         android:layout_marginBottom="10dp"
         android:onClick="DropDatabaseButtonPressed"
         android:text=" drop" />
+
+    <Button
+        android:id="@+id/ViewDatabaseButtonPressed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/DropDatabaseButtonPressed"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:onClick="ViewButtonPressed"
+        android:text="View" />
 
     <TextView
         android:id="@+id/forgotpassword"

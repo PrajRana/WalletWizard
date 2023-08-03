@@ -36,25 +36,30 @@ public class DBManager {
         sqLiteDatabase.insert(JDBCHelper.Database_Table, null, contentValues);
     }
 
-//    public Cursor query() {
-//        String[] columns = {JDBCHelper.User_name, JDBCHelper.User_password}; // Define the columns you want to retrieve
-//        return sqLiteDatabase.query(JDBCHelper.Database_Table, columns, null, null, null, null, null);
-//    }
+    public Cursor query() {
+        String[] columns = {JDBCHelper.User_name, JDBCHelper.User_password}; // Define the columns you want to retrieve
+        return sqLiteDatabase.query(JDBCHelper.Database_Table, columns, null, null, null, null, null);
+    }
+
+    public Cursor query1(String username, String password) {
+        String[] columns2 = {JDBCHelper.User_name, JDBCHelper.User_password};
+        String choose = "UserName=? AND Password=?";
+        String[] select = new String[]{username, password};
+        return sqLiteDatabase.query(JDBCHelper.Database_Table, columns2, choose, select, null, null, null);
+    }
 
     public Cursor query2(String username, String email) {
         String[] columns2 = {JDBCHelper.Email, JDBCHelper.User_name};
-        String choose = "Email=? AND UserName=?";
+        String choose = "Email=? OR UserName=?";
         String[] select = new String[]{email, username};
         return sqLiteDatabase.query(JDBCHelper.Database_Table, columns2, choose, select, null, null, null);
     }
 
 
 
-
-
-//   public void dropDatabase() {
-//        context.deleteDatabase(JDBCHelper.Database_Name);
-//    }
+   public void dropDatabase() {
+        context.deleteDatabase(JDBCHelper.Database_Name);
+    }
 }
 
 
