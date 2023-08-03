@@ -1,6 +1,7 @@
 package com.example.WalletWizard;
 
 
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,12 +13,12 @@ import androidx.appcompat.app.AppCompatActivity;
 public class SignUpPage extends AppCompatActivity {
     DBManager dbManager;
 
-    TextView Full_Name;
-    TextView Email;
-    TextView User_name;
-    TextView User_password;
-    TextView confirm_password;
-    Button  register;
+    TextView fullname;
+    TextView email;
+    TextView username;
+    TextView userpassword;
+    TextView confirmpassword;
+    Button register;
 
 
     @Override
@@ -25,11 +26,11 @@ public class SignUpPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sign_up);
 
-        Full_Name = (TextView) findViewById(R.id.fullname) ;
-        Email = (TextView) findViewById(R.id.email);
-        User_name = (TextView) findViewById(R.id.username);
-        User_password = (TextView) findViewById(R.id.password);
-        confirm_password = (TextView) findViewById(R.id.confirmpassword);
+        fullname = (TextView) findViewById(R.id.fullname);
+        email = (TextView) findViewById(R.id.email);
+        username = (TextView) findViewById(R.id.username);
+        userpassword = (TextView) findViewById(R.id.password);
+        confirmpassword = (TextView) findViewById(R.id.confirmpassword);
 
 
         register = (Button) findViewById(R.id.signupbutton);
@@ -43,27 +44,48 @@ public class SignUpPage extends AppCompatActivity {
         }
 
     }
-    public void RegisterButtonPressed(View v){
 
-        if(!confirm_password.getText().toString().equals(User_password.getText().toString())){
+    public void RegisterButtonPressed(View v) {
+
+        if (!confirmpassword.getText().toString().equals(userpassword.getText().toString())) {
             Toast.makeText(this, "Passwords do not match. Please re-enter.", Toast.LENGTH_SHORT).show();
+        } else {
+            Cursor cursor = dbManager.query2(username.getText().toString(), email.getText().toString());
+            if (cursor != null && cursor.getCount() > 0) {
+                Toast.makeText(this, "user already exists", Toast.LENGTH_SHORT).show();
+            } else {
+                dbManager.insert(fullname.getText().toString(), username.getText().toString(),
+                        email.getText().toString(), userpassword.getText().toString());
+                Toast.makeText(this, "Succesfully entered into database", Toast.LENGTH_SHORT).show();
+
+                //OpenNewPage();
+            }
+//
+//            //    public void ViewButtonPressed(View v) {
+////        Cursor cursor = dbManager.query();
+////        if (cursor != null) {
+////            if (cursor.moveToFirst()) {
+////                do {
+////                    try {
+////                            String username = cursor.getString(cursor.getColumnIndexOrThrow(JDBCHelper.User_name));
+////                            String password = cursor.getString(cursor.getColumnIndexOrThrow(JDBCHelper.User_password));
+////                            Log.i("DATABASE_TAG","I have username: "+ username + " password : "+ password);
+////                    } catch (IllegalArgumentException e) {
+////                        e.printStackTrace();
+////                            // Handle the exception here if the column does not exist
+////                    }
+////                } while (cursor.moveToNext());
+////            }
+////            cursor.close(); // Remember to close the cursor when you're done with it
+////        }
+////    }
+//
+//
+//        }
+
+
         }
-        else{
-            dbManager.insert(Full_Name.getText().toString(),User_name.getText().toString(),
-                    Email.getText().toString(),User_password.getText().toString());
-            Toast.makeText(this, "Succesfully entered into database", Toast.LENGTH_SHORT).show();
-
-            //OpenNewPage();
-
-        }
-
-
-
-
-
     }
-
-
 }
 
 

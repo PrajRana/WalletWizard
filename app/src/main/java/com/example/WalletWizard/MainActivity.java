@@ -70,19 +70,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-//        Cursor cursor = dbManager.query();
-//        if (cursor != null){
-//
-//
-//
-//        }
-
-
-
-
-
-
-
 //    public void ViewButtonPressed(View v) {
 //        Cursor cursor = dbManager.query();
 //        if (cursor != null) {
