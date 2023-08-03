@@ -25,8 +25,9 @@
             </intent-filter>
         </activity>
         <activity  android:name=".ManageData"/>
-        <activity
-            android:name=".SignUpPage" />
+        <activity  android:name=".SignUpPage" />
+        <activity android:name=".ResetPassword" />
+
 
 
 

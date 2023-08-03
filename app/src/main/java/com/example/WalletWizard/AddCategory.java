@@ -5,6 +5,7 @@ public class AddCategory {
     private float amount;
     private String category;
 
+
     public AddCategory(String name, float amount, String category){
         this.name = name;
         this.amount = amount;

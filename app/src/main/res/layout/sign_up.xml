@@ -87,6 +87,9 @@
         android:layout_height="wrap_content"
         android:id="@+id/signupbutton"
         android:text="Register"
+        android:clickable="true"
+        android:onClick="RegisterButtonPressed"
+        android:focusable="true"
         android:layout_below="@+id/confirmpassword"/>
 
 

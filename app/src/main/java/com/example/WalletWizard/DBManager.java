@@ -26,11 +26,13 @@ public class DBManager {
         jdbcHelper.close();
     }
 
-    public void insert(String username, String password) {
+    public void insert(String fullName, String username,String email, String password) {
         ContentValues contentValues = new ContentValues();
-        contentValues.put(JDBCHelper.User_name, username); // Use JDBCHelper.User_name instead of jdbcHelper.User_name
-        contentValues.put(JDBCHelper.User_password, password); // Use JDBCHelper.User_password instead of jdbcHelper.User_password
-        sqLiteDatabase.insert(JDBCHelper.Database_Table, null, contentValues); // Use JDBCHelper.Database_Table instead of jdbcHelper.Database_Table
+        contentValues.put(JDBCHelper.Full_Name, fullName);
+        contentValues.put(JDBCHelper.User_name, username);
+        contentValues.put(JDBCHelper.Email, email);
+        contentValues.put(JDBCHelper.User_password, password);
+        sqLiteDatabase.insert(JDBCHelper.Database_Table, null, contentValues);
     }
 
     public Cursor query() {

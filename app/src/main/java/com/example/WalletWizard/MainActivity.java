@@ -46,14 +46,19 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void InsertButtonPressed(View v){
-        dbManager.insert(username.getText().toString(),password.getText().toString());
-        OpenNewPage();
-
-    }
+//    public void InsertButtonPressed(View v){
+//        dbManager.insert(username.getText().toString(),password.getText().toString(),password.getText().toString(),password.getText().toString());
+//        //OpenNewPage();
+//
+//    }
 
     public  void NewSignUp(View v){
         Intent intent = new Intent(this,SignUpPage.class);
+        startActivity(intent);
+    }
+
+    public void ForgotPassword(View v){
+        Intent intent = new Intent(this,ResetPassword.class);
         startActivity(intent);
     }
 
@@ -61,6 +66,18 @@ public class MainActivity extends AppCompatActivity {
 //        dbManager.dropDatabase();
 //        Toast.makeText(this, "Database Dropped!", Toast.LENGTH_SHORT).show();
 //    }
+
+
+
+
+//        Cursor cursor = dbManager.query();
+//        if (cursor != null){
+//
+//
+//
+//        }
+
+
 
 
 

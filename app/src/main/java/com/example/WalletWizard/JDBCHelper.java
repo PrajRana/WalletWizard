@@ -21,17 +21,15 @@ public class JDBCHelper extends SQLiteOpenHelper{
     static final String User_password = "Password";
 
     private static final String CREATE_DB_QUERY = "CREATE TABLE " + Database_Table + " ("
-            + Email + " TEXT NOT NULL, "
-            + User_name + " TEXT PRIMARY KEY AUTOINCREMENT, "
+            + Email + " TEXT NOT NULL UNIQUE, "
+            + User_name + " TEXT PRIMARY KEY , "
             + User_password + " TEXT NOT NULL, "
             + Full_Name + " TEXT NOT NULL);";
 
 
-    private static final String CREATE_DB_QUERY2 = "CREATE TABLE " + Database_Table2 + " (" +
-            User_name + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-            User_password + " TEXT NOT NULL, " +
-            "FOREIGN KEY (" + Email + ") REFERENCES " + Database_Table + "(" + User_name + "));";
-
+    private static final String CREATE_DB_QUERY2 = "CREATE TABLE " + Database_Table2 + " ("
+            + User_name + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+            + "FOREIGN KEY(" + User_name + ") REFERENCES " + Database_Table + "(" + User_name + "));";
 
 
 
@@ -43,15 +41,13 @@ public class JDBCHelper extends SQLiteOpenHelper{
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_DB_QUERY);
         db.execSQL(CREATE_DB_QUERY2);
-
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
             db.execSQL("DROP TABLE IF EXISTS "+ Database_Table);
             onCreate(db);
-
-        }
+    }
 
 }
 
