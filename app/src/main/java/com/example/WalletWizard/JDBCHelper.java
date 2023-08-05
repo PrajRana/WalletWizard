@@ -30,9 +30,9 @@ public class JDBCHelper extends SQLiteOpenHelper{
             + "PRIMARY KEY (" + User_name + "));";
 
 
-//    private static final String CREATE_DB_QUERY2 = "CREATE TABLE " + Database_Table2 + " ("
-//            + User_name + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-//            + "FOREIGN KEY(" + User_name + ") REFERENCES " + Database_Table + "(" + User_name + "));";
+    private static final String CREATE_DB_QUERY2 = "CREATE TABLE " + Database_Table2 + " ("
+            + User_name + " TEXT PRIMARY KEY UNIQUE, "
+            + "FOREIGN KEY(" + User_name + ") REFERENCES " + Database_Table + "(" + User_name + "));";
 
 
 
@@ -44,13 +44,13 @@ public class JDBCHelper extends SQLiteOpenHelper{
     public void onCreate(SQLiteDatabase db) {
        Log.d("JDBCHelper", "onCreate called");
         db.execSQL(CREATE_DB_QUERY);
-
-       //db.execSQL(CREATE_DB_QUERY2);
+        db.execSQL(CREATE_DB_QUERY2);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
             db.execSQL("DROP TABLE IF EXISTS "+ Database_Table);
+            db.execSQL("DROP TABLE IF EXISTS "+ Database_Table2);
             onCreate(db);
     }
 

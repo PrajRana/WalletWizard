@@ -1,6 +1,7 @@
 package com.example.WalletWizard;
 
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
@@ -32,8 +33,6 @@ public class SignUpPage extends AppCompatActivity {
         username = (TextView) findViewById(R.id.username);
         userpassword = (TextView) findViewById(R.id.password);
         confirmpassword = (TextView) findViewById(R.id.confirmpassword);
-
-
         register = (Button) findViewById(R.id.signupbutton);
 
         dbManager = new DBManager(this);
@@ -43,7 +42,6 @@ public class SignUpPage extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 
     public void RegisterButtonPressed(View v) {
@@ -56,7 +54,9 @@ public class SignUpPage extends AppCompatActivity {
             } else {
                 dbManager.insert(fullname.getText().toString(), username.getText().toString(),
                         email.getText().toString(), userpassword.getText().toString());
+                dbManager.insertSecond(username.getText().toString());
                 Toast.makeText(this, "Succesfully entered into database", Toast.LENGTH_SHORT).show();
+                OpenNewPage();
             }
         }
     }
@@ -79,6 +79,10 @@ public class SignUpPage extends AppCompatActivity {
         }
     }
 
+    public void OpenNewPage(){
+        Intent intent = new Intent(this,ManageData.class);
+        startActivity(intent);
+    }
 
 }
 

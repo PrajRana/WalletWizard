@@ -3,5 +3,60 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/headername"
+        android:text="Finacial Dashboard"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:layout_margin="25dp"/>
 
-    </RelativeLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/totalbudget"
+        android:text="Enter total budget"
+        android:layout_below="@+id/headername"
+        android:layout_marginStart="10dp"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:gravity="left"
+        android:layout_margin="15dp"/>
+
+    <EditText
+        android:id="@+id/budgetnumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/totalbudget"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="0dp"
+        android:hint="Total balance"
+        android:padding="20dp"/>
+
+    <Button
+        android:id="@+id/addnewexpenditure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="false"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:text="Save"
+        android:clickable="true"
+        android:onClick="AddNewExpenditure"
+        android:focusable="true"/>
+
+
+
+
+
+
+
+
+
+</RelativeLayout>

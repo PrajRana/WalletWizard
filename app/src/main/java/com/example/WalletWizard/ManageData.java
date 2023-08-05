@@ -11,9 +11,8 @@ import java.util.List;
 
 public class ManageData extends AppCompatActivity {
 
-    TextView UserName;
-    TextView password;
-    DBManager dbManager;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

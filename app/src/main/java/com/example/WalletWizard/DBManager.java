@@ -36,6 +36,12 @@ public class DBManager {
         sqLiteDatabase.insert(JDBCHelper.Database_Table, null, contentValues);
     }
 
+    public void insertSecond(String username){
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(JDBCHelper.User_name,username);
+        sqLiteDatabase.insert(JDBCHelper.Database_Table2, null, contentValues);
+    }
+
     public Cursor query() {
         String[] columns = {JDBCHelper.User_name, JDBCHelper.User_password}; // Define the columns you want to retrieve
         return sqLiteDatabase.query(JDBCHelper.Database_Table, columns, null, null, null, null, null);
