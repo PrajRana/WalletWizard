@@ -8,6 +8,8 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
+import java.math.BigDecimal;
+
 public class JDBCHelper extends SQLiteOpenHelper{
 
     static final String Database_Name = "UserInfo.db";
@@ -22,6 +24,11 @@ public class JDBCHelper extends SQLiteOpenHelper{
     static final String User_name = "UserName";
     static final String User_password = "Password";
 
+    static final String Total_Budget = "TotalBudget";
+
+    static final String Remaining_balance = "RemainingBalance";
+
+
     private static final String CREATE_DB_QUERY = "CREATE TABLE " + Database_Table + " ("
             + Email + " TEXT NOT NULL UNIQUE, "
             + User_name + " TEXT NOT NULL UNIQUE, "
@@ -32,8 +39,9 @@ public class JDBCHelper extends SQLiteOpenHelper{
 
     private static final String CREATE_DB_QUERY2 = "CREATE TABLE " + Database_Table2 + " ("
             + User_name + " TEXT PRIMARY KEY UNIQUE, "
+            + Total_Budget+" DOUBLE ,"
+            + Remaining_balance+" DOUBLE ,"
             + "FOREIGN KEY(" + User_name + ") REFERENCES " + Database_Table + "(" + User_name + "));";
-
 
 
     public JDBCHelper(Context context) {

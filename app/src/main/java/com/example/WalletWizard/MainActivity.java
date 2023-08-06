@@ -92,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void OpenNewPage(){
         Intent intent = new Intent(this,ManageData.class);
+        intent.putExtra("username",username.getText().toString());
         startActivity(intent);
     }
 }
