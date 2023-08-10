@@ -71,24 +71,24 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void ViewButtonPressed(View v) {
-        Cursor cursor = dbManager.query();
-        if (cursor != null) {
-            if (cursor.moveToFirst()) {
-                do {
-                    try {
-                            String username = cursor.getString(cursor.getColumnIndexOrThrow(JDBCHelper.User_name));
-                            String password = cursor.getString(cursor.getColumnIndexOrThrow(JDBCHelper.User_password));
-                            Log.i("DATABASE_TAG","I have username: "+ username + " password : "+ password);
-                    } catch (IllegalArgumentException e) {
-                        e.printStackTrace();
-                            // Handle the exception here if the column does not exist
-                    }
-                } while (cursor.moveToNext());
-            }
-            cursor.close(); // Remember to close the cursor when you're done with it
-        }
-    }
+//    public void ViewButtonPressed(View v) {
+//        Cursor cursor = dbManager.query();
+//        if (cursor != null) {
+//            if (cursor.moveToFirst()) {
+//                do {
+//                    try {
+//                            String username = cursor.getString(cursor.getColumnIndexOrThrow(JDBCHelper.User_name));
+//                            String password = cursor.getString(cursor.getColumnIndexOrThrow(JDBCHelper.User_password));
+//                            Log.i("DATABASE_TAG","I have username: "+ username + " password : "+ password);
+//                    } catch (IllegalArgumentException e) {
+//                        e.printStackTrace();
+//                            // Handle the exception here if the column does not exist
+//                    }
+//                } while (cursor.moveToNext());
+//            }
+//            cursor.close(); // Remember to close the cursor when you're done with it
+//        }
+//    }
 
     public void OpenNewPage(){
         Intent intent = new Intent(this,ManageData.class);

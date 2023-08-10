@@ -28,6 +28,14 @@ public class JDBCHelper extends SQLiteOpenHelper{
 
     static final String Remaining_balance = "RemainingBalance";
 
+    static final String Housing_Expenses = "Housing";
+    static final String Food_Expenses = "Food";
+    static final String Healthcare_Expenses = "Healthcare";
+    static final String Education_Expenses = "Education";
+    static final String Insurance_Expenses = "Insurance";
+    static final String Other_Expenses = "Other";
+
+
 
     private static final String CREATE_DB_QUERY = "CREATE TABLE " + Database_Table + " ("
             + Email + " TEXT NOT NULL UNIQUE, "
@@ -39,10 +47,15 @@ public class JDBCHelper extends SQLiteOpenHelper{
 
     private static final String CREATE_DB_QUERY2 = "CREATE TABLE " + Database_Table2 + " ("
             + User_name + " TEXT PRIMARY KEY UNIQUE, "
-            + Total_Budget+" DOUBLE ,"
-            + Remaining_balance+" DOUBLE ,"
+            + Total_Budget + " DOUBLE, "
+            + Remaining_balance + " DOUBLE, "
+            + Housing_Expenses + " DOUBLE, "
+            + Food_Expenses + " DOUBLE, "
+            + Education_Expenses + " DOUBLE, "
+            + Healthcare_Expenses + " DOUBLE, "
+            + Insurance_Expenses + " DOUBLE, "
+            + Other_Expenses + " DOUBLE, "
             + "FOREIGN KEY(" + User_name + ") REFERENCES " + Database_Table + "(" + User_name + "));";
-
 
     public JDBCHelper(Context context) {
         super(context, Database_Name, null, Database_Version);

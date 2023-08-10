@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,11 +16,11 @@ import androidx.appcompat.app.AppCompatActivity;
 public class SignUpPage extends AppCompatActivity {
     DBManager dbManager;
 
-    TextView fullname;
-    TextView email;
-    TextView username;
-    TextView userpassword;
-    TextView confirmpassword;
+    EditText fullname;
+    EditText email;
+    EditText username;
+    EditText userpassword;
+    EditText confirmpassword;
     Button register;
 
 
@@ -28,11 +29,11 @@ public class SignUpPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sign_up);
 
-        fullname = (TextView) findViewById(R.id.fullname);
-        email = (TextView) findViewById(R.id.email);
-        username = (TextView) findViewById(R.id.username);
-        userpassword = (TextView) findViewById(R.id.password);
-        confirmpassword = (TextView) findViewById(R.id.confirmpassword);
+        fullname = findViewById(R.id.fullname);
+        email = findViewById(R.id.email);
+        username = findViewById(R.id.username);
+        userpassword = findViewById(R.id.password);
+        confirmpassword = findViewById(R.id.confirmpassword);
         register = (Button) findViewById(R.id.signupbutton);
 
         dbManager = new DBManager(this);
@@ -55,29 +56,29 @@ public class SignUpPage extends AppCompatActivity {
                 dbManager.insert(fullname.getText().toString(), username.getText().toString(),
                         email.getText().toString(), userpassword.getText().toString());
                 dbManager.insertSecond(username.getText().toString());
-                Toast.makeText(this, "Succesfully entered into database", Toast.LENGTH_SHORT).show();
+               // Toast.makeText(this, "Succesfully entered into database", Toast.LENGTH_SHORT).show();
                 OpenNewPage();
             }
         }
     }
-    public void ViewButtonPressed(View v) {
-        Cursor cursor = dbManager.query();
-        if (cursor != null) {
-            if (cursor.moveToFirst()) {
-                do {
-                    try {
-                            String username = cursor.getString(cursor.getColumnIndexOrThrow(JDBCHelper.User_name));
-                            String password = cursor.getString(cursor.getColumnIndexOrThrow(JDBCHelper.User_password));
-                            Log.i("DATABASE_TAG","I have username: "+ username + " password : "+ password);
-                    } catch (IllegalArgumentException e) {
-                        e.printStackTrace();
-                            // Handle the exception here if the column does not exist
-                    }
-                } while (cursor.moveToNext());
-            }
-            cursor.close(); // Remember to close the cursor when you're done with it
-        }
-    }
+//    public void ViewButtonPressed(View v) {
+//        Cursor cursor = dbManager.query();
+//        if (cursor != null) {
+//            if (cursor.moveToFirst()) {
+//                do {
+//                    try {
+//                            String username = cursor.getString(cursor.getColumnIndexOrThrow(JDBCHelper.User_name));
+//                            String password = cursor.getString(cursor.getColumnIndexOrThrow(JDBCHelper.User_password));
+//                            Log.i("DATABASE_TAG","I have username: "+ username + " password : "+ password);
+//                    } catch (IllegalArgumentException e) {
+//                        e.printStackTrace();
+//                            // Handle the exception here if the column does not exist
+//                    }
+//                } while (cursor.moveToNext());
+//            }
+//            cursor.close(); // Remember to close the cursor when you're done with it
+//        }
+//    }
 
     public void OpenNewPage(){
         Intent intent = new Intent(this,ManageData.class);

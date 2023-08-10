@@ -1,100 +1,251 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <TextView
+<ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/headername"
-        android:text="Finacial Dashboard"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:gravity="center"
-        android:layout_margin="25dp"/>
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/headername"
+                android:text="Finacial Dashboard"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:layout_margin="25dp"/>
+
+            <TextView
+                android:id="@+id/totalbudget"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/headername"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="15dp"
+                android:gravity="left"
+                android:text="Enter total budget"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+
+            <EditText
+                android:id="@+id/budgetnumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/totalbudget"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="0dp"
+                android:hint="Total balance"
+                android:padding="20dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/totalexpenditure"
+                android:text="Remaining balance"
+                android:layout_below="@+id/budgetnumber"
+                android:layout_marginStart="10dp"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:gravity="left"
+                android:layout_margin="15dp"/>
+
+            <TextView
+                android:id="@+id/viewremainingbalance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/totalexpenditure"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="15dp"
+                android:gravity="left"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/housing"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/viewremainingbalance"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginBottom="25dp"
+                android:gravity="left"
+                android:text="Housing"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+
+            <EditText
+                android:id="@+id/housingexpense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/housing"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="0dp"
+                android:hint="Housing expense"
+                android:padding="20dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/food"
+                android:text="Food"
+                android:layout_below="@+id/housingexpense"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="0dp"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:gravity="left"
+                android:layout_margin="25dp"/>
+
+            <EditText
+                android:id="@+id/foodexpense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/food"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="0dp"
+                android:hint="Food expense"
+                android:padding="20dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/education"
+                android:text="Education"
+                android:layout_below="@+id/foodexpense"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="0dp"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:gravity="left"
+                android:layout_margin="25dp"/>
+
+            <EditText
+                android:id="@+id/educationexpense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/education"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="0dp"
+                android:hint="Education expense"
+                android:padding="20dp"/>
+
+            <TextView
+                android:id="@+id/healthcare"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/educationexpense"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginBottom="25dp"
+                android:gravity="left"
+                android:text="Healthcare"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+
+            <EditText
+                android:id="@+id/healthcareexpense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/healthcare"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="0dp"
+                android:hint="Healthcare Expense"
+                android:padding="20dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/Insurance"
+                android:text="Insurance"
+                android:layout_below="@+id/healthcareexpense"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="0dp"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:gravity="left"
+                android:layout_margin="25dp"/>
+
+            <EditText
+                android:id="@+id/insuranceexpense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Insurance"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="0dp"
+                android:hint="Insurance Expense"
+                android:padding="20dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/other"
+                android:text="Other"
+                android:layout_below="@+id/insuranceexpense"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="0dp"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:gravity="left"
+                android:layout_margin="25dp"/>
+
+            <EditText
+                android:id="@+id/otherexpense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/other"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="0dp"
+                android:hint="Other Expense"
+                android:padding="20dp"/>
 
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/totalbudget"
-        android:text="Enter total budget"
-        android:layout_below="@+id/headername"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="0dp"
-        android:layout_marginBottom="0dp"
-        android:textSize="20dp"
-        android:textColor="@color/black"
-        android:gravity="left"
-        android:layout_margin="15dp"/>
-
-    <EditText
-        android:id="@+id/budgetnumber"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/totalbudget"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="0dp"
-        android:layout_marginBottom="0dp"
-        android:hint="Total balance"
-        android:padding="20dp"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/totalexpenditure"
-        android:text="Remaining balance"
-        android:layout_below="@+id/budgetnumber"
-        android:layout_marginStart="10dp"
-        android:textSize="20dp"
-        android:textColor="@color/black"
-        android:gravity="left"
-        android:layout_margin="15dp"/>
-
-    <TextView
-        android:id="@+id/viewremainingbalance"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/totalexpenditure"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="15dp"
-        android:gravity="left"
-        android:textColor="@color/black"
-        android:textSize="20dp" />
+            <Button
+                android:id="@+id/savebutton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="false"
+                android:layout_marginTop="50dp"
+                android:layout_below="@+id/otherexpense"
+                android:layout_marginStart="10dp"
+                android:text="Save"
+                android:clickable="true"
+                android:onClick="SaveButtonPressed"
+                android:focusable="true"/>
 
 
+        </RelativeLayout>
+</ScrollView>
 
-
-
-    <Button
-        android:id="@+id/addnewbutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="10dp"
-        android:layout_below="@+id/viewremainingbalance"
-        android:text="Add New"
-        android:clickable="true"
-        android:onClick="AddNewButtonPressed"
-        android:focusable="true"/>
-
-
-    <Button
-        android:id="@+id/savebutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="false"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="10dp"
-        android:text="Save"
-        android:clickable="true"
-        android:onClick="SaveButtonPressed"
-        android:focusable="true"/>
-
-</RelativeLayout>

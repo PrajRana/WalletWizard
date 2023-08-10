@@ -14,7 +14,6 @@ public class ResetPassword extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.forgot_password);
     }
-
     public void SendEmail(View v){
         EditText UserEmail = findViewById(R.id.resetpasswordemail);
         String userEnteredEmail = UserEmail.getText().toString().trim();
